@@ -40,6 +40,18 @@
         </div>
 
         <div class="form-group">
+          <label for="tel" class="form-label">SĐT</label>
+          <input
+            id="tel"
+            name="tel"
+            type="number"
+            class="form-control"
+            placeholder="(0)123456789"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
           <label for="password" class="form-label">Mật khẩu</label>
           <input
             id="password"
@@ -131,6 +143,8 @@
           Validator.isRequired('input[name="gender"]'),
           Validator.isRequired("#province"),
           Validator.isRequired("#avatar"),
+          Validator.isRequired("#tel"),
+          Validator.isTelNumber("#tel"),
         ],
         onSubmit: function (data) {
           console.log(data);

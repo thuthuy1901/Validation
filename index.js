@@ -185,6 +185,18 @@ Validator.isConfirmed = function (selector, getConfirmValue, message) {
     };
 }
 
+Validator.isTelNumber = function (selector) {
+    return {
+        selector: selector,
+        test: function (value) {
+            value = value.replace(/\s/g, '');
+            var telNormal = /^\(?(0[0-9]{2})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            var telUni = /^\+?([0-9]{2})\)?[-. ]?([0-9]{9})$/;
+            return (value.match(telNormal) || value.match(telUni)) ? undefined : 'sdt khong dung';
+        }
+    }
+}
+
 
 
 
