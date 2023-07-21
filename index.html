@@ -119,10 +119,52 @@
 
         <button class="form-submit">Đăng ký</button>
       </form>
+      <form action="" method="POST" class="form" id="form-register">
+        <div class="form-group">
+          <label for="fullname" class="form-label">Tên đầy đủ</label>
+          <input
+            id="fullname"
+            name="fullname"
+            type="text"
+            placeholder="VD: Sơn Đặng"
+            class="form-control"
+            rules="required"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="text"
+            placeholder="VD: email@domain.com"
+            rules="required|email"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Mật khẩu</label>
+          <input
+            id="password"
+            name="password"
+            placeholder="Nhập mật khẩu"
+            rules="required|min:1"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <button class="form-submit">Đăng ký</button>
+      </form>
     </div>
+    <!-- Cach 1 -->
     <script src="./index.js"></script>
     <script>
-      //Mong muốn
+      //Mong muốn C1
       Validator({
         form: "#form-1",
         formGroupSelector: ".form-group",
@@ -150,6 +192,12 @@
           console.log(data);
         },
       });
+    </script>
+    -->
+    <!-- Cach 2 -->
+    <script src="./validation.js"></script>
+    <script>
+      Validator2("#form-register");
     </script>
   </body>
 </html>
